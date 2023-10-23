@@ -1,5 +1,5 @@
 # universidade
-Criando tabela alunos
+## Criando tabela alunos
 
 ```
 create table Alunos 
@@ -12,7 +12,7 @@ emailAluno varchar(100)
 );
 ```
 
-Criando tabela professores
+## Criando tabela professores
 
 ```
 create table Professores
@@ -22,7 +22,7 @@ nomeProfessor varchar(100)
 );
 ```
 
-Criando tabela cursos
+## Criando tabela cursos
 
 ```
 create table Cursos
@@ -32,7 +32,7 @@ nomeCurso varchar(100)
 );
 ```
 
-Criando tabela professores e cursos
+## Criando tabela professores e cursos
 
 ```
 create table ProfessoresCursos
@@ -42,7 +42,7 @@ idCurso int references Cursos(idCurso)
 );
 ```
 
-Criando stored procedure para inserir curso
+## Criando stored procedure para inserir curso
 
 ```
 DELIMITER //
@@ -65,7 +65,7 @@ CALL InserirCurso('Inglês');
 CALL InserirCurso('Física');
 ```
 
-Criando stored procedure para inserir aluno
+## Criando stored procedure para inserir aluno
 
 ```
 DELIMITER //
@@ -87,7 +87,7 @@ END //
 DELIMITER ;
 ```
 
-Criando stored procedure para inserir professor
+## Criando stored procedure para inserir professor
 
 ```
 DELIMITER //
@@ -104,7 +104,7 @@ END //
 DELIMITER ;
 ```
 
-Inserindo alunos e professores
+## Inserindo alunos e professores
 ```
 CALL InserirAluno('João', 'Silva', 1);
 CALL InserirAluno('Maria', 'Santos', 2);
@@ -129,7 +129,7 @@ CALL InserirProfessor('Prof. Guilherme');
 CALL InserirProfessor('Prof. Beatriz');
 ```
 
-Criando stored procedure para associar professor e curso
+## Criando stored procedure para associar professor e curso
 
 ```
 DELIMITER //
@@ -152,7 +152,7 @@ CALL AssociarProfessorCurso(4, 4);
 CALL AssociarProfessorCurso(5, 5);
 ```
 
-Criando stored procedure para consultar os dados
+## Criando stored procedure para consultar os dados
 
 ```
 DELIMITER //
