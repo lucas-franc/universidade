@@ -1,7 +1,7 @@
 # universidade
 Criando tabela alunos
 
-´´´
+```
 create table Alunos 
 (
 raAluno int primary key auto_increment,
@@ -10,37 +10,41 @@ sobrenomeAluno varchar(45),
 idCurso int references Cursos(idCurso),
 emailAluno varchar(100)
 );
-´´´
+```
 
 Criando tabela professores
 
+```
 create table Professores
 (
 idProfessor int primary key auto_increment,
 nomeProfessor varchar(100)
 );
-
+```
 
 Criando tabela cursos
 
+```
 create table Cursos
 (
 idCurso int primary key auto_increment,
 nomeCurso varchar(100)
 );
-
+```
 
 Criando tabela professores e cursos
 
+```
 create table ProfessoresCursos
 (
 idProfessor int references Professores(idProfessor),
 idCurso int references Cursos(idCurso)
 );
-
+```
 
 Criando stored procedure para inserir curso
 
+```
 DELIMITER //
 
 CREATE PROCEDURE InserirCurso (
@@ -59,10 +63,11 @@ CALL InserirCurso('História');
 CALL InserirCurso('Ciências');
 CALL InserirCurso('Inglês');
 CALL InserirCurso('Física');
-
+```
 
 Criando stored procedure para inserir aluno
 
+```
 DELIMITER //
 
 CREATE PROCEDURE InserirAluno (
@@ -80,10 +85,11 @@ BEGIN
 END //
 
 DELIMITER ;
-
+```
 
 Criando stored procedure para inserir professor
 
+```
 DELIMITER //
 
 CREATE PROCEDURE InserirProfessor (
@@ -96,7 +102,10 @@ BEGIN
 END //
 
 DELIMITER ;
+```
 
+Inserindo alunos e professores
+```
 CALL InserirAluno('João', 'Silva', 1);
 CALL InserirAluno('Maria', 'Santos', 2);
 CALL InserirAluno('Pedro', 'Ferreira', 2);
@@ -118,10 +127,11 @@ CALL InserirProfessor('Prof. André');
 CALL InserirProfessor('Prof. Laura');
 CALL InserirProfessor('Prof. Guilherme');
 CALL InserirProfessor('Prof. Beatriz');
-
+```
 
 Criando stored procedure para associar professor e curso
 
+```
 DELIMITER //
 
 CREATE PROCEDURE AssociarProfessorCurso (
@@ -140,10 +150,11 @@ CALL AssociarProfessorCurso(2, 2);
 CALL AssociarProfessorCurso(3, 3);  
 CALL AssociarProfessorCurso(4, 4);  
 CALL AssociarProfessorCurso(5, 5);
-
+```
 
 Criando stored procedure para consultar os dados
 
+```
 DELIMITER //
 
 CREATE PROCEDURE ConsultarDadosCursoProfessorAlunos ()
@@ -159,4 +170,4 @@ BEGIN
 END //
 
 DELIMITER ;
-
+```
